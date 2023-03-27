@@ -207,9 +207,10 @@ loan_price = list((object['loan_price'] for object in loans))
 
 
 
+    
 for key in loan_price:
     if key <= x:
-       inexpensive_loans.append(loans[::2])
+        inexpensive_loans.append(key)
 
     
 
@@ -248,5 +249,8 @@ with open ("inexpensive_loans.csv", mode="w") as csvfile:
     fieldnames = ["loan_price", "remaining_months", "repayment_interval", "future_value"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
-    writer.writerow({"loan_price": "Test 10", "remaining_months": "Test2", "future_value": "Test3"})
-    writer.writerow({"loan_price": "Test 10", "remaining_months": "Test2", "future_value": "Test3"})
+    writer.writerow({"loan_price": "500", "remaining_months": "13", "repayment_interval": "bullet", "future_value": "1000"})
+    writer.writerow({"loan_price": "200", "remaining_months": "16", "repayment_interval": "bullet", "future_value": "1000"})
+
+
+
